@@ -1,0 +1,31 @@
+html,
+body {
+    overflow-x: hidden;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Regular";
+    position: relative;
+    min-height: 100vh;
+    color: #fff;
+
+    background-image: url('../assets/images/bg/bg.webp');
+    background-size: cover; 
+    background-position: top;
+    background-repeat: no-repeat; 
+    
+}
+
+.wrapper {
+    margin-inline: auto;
+    max-width: 1920px;
+}
+
+p {
+    margin-top: 120px;
+    font-size: 20px;
+}
+
+[x-cloak] { display: none !important; }

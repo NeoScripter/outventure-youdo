@@ -1,0 +1,13 @@
+@function rem($value_in_px, $base_font_size: 16px) {
+    $raw_result: calc($value_in_px / $base_font_size);
+    $rounded: round_to_decimal($raw_result);
+    @return $rounded + rem;
+}
+
+@function round_to_decimal($value) {
+    @return calc(ceil($value * 100) / 100);
+}
+
+@function color($category, $variant: "neutral") {
+    @return map-get(map-get($colors, $category), $variant);
+}

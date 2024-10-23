@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Bold';
+    src: url('SMSans-Bd.woff2') format('woff2'),
+        url('SMSans-Bd.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Medium';
+    src: url('SMSans-Md.woff2') format('woff2'),
+        url('SMSans-Md.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Regular';
+    src: url('SMSans-Rg.woff2') format('woff2'),
+        url('SMSans-Rg.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,43 @@
+// Breakpoints
+$breakpoint1: 768px;
+$breakpoint2: 1024px;
+$breakpoint3: 1440px;
+
+// Sizes
+$wr-width: rem(1111px);
+
+// Sizes
+$small-screen: 300px;
+$wrapper-width: 1800px;
+$screen-width: 1440px;
+
+// Colors
+$colors: (
+    "white": (
+        "dark": #EDF4EB,
+        "neutral": #fff,
+    ),
+
+    "black": (
+        "dark": #000,
+        "neutral": #2B2D33,
+    ),
+
+    "green": (
+        "neutral": #48905D,
+        "light": #99C7A7,
+        "extra-light": #EDF4EB,
+    ),
+
+    "gray": (
+        "dark": #828282,
+        "neutral": #9A9AB0,
+        "light": #999EAD,
+        "extra-light": #D9D9D9,
+    ),
+
+    "red": (
+        "neutral": #B82F31,
+        "light": #d7474a,
+    ),
+);
