@@ -41,3 +41,65 @@
     }
 }
 
+@mixin m4() {
+    @media screen and (min-width: $breakpoint4) {
+        @content;
+    }
+}
+
+@mixin fs14() {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Regular';
+    line-height: normal;
+}
+
+@mixin fs16() {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Regular';
+    line-height: normal;
+}
+
+@mixin fs18($weight: bold) {
+    font-size: 18px;
+    font-style: normal;
+    line-height: 130%;
+
+    @if ($weight == bold) {
+        font-weight: 700;
+        font-family: 'Bold';
+    } @else {
+        font-weight: 400;
+        font-family: 'Regular';
+    }
+}
+
+@mixin fs24() {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-family: 'Regular';
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@mixin fs30() {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Medium';
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+@mixin fs40() {
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-family: 'Medium';
+    line-height: normal;
+    text-transform: uppercase;
+}

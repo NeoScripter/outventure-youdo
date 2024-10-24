@@ -1,15 +1,108 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outventure</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body>
-    привет мир
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Outventure</title>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="sliders">
+                <div class="slider__top">
+                    <div class="slider__top-controls">
+                        <button class="slider__top-btn">1 <span class="slider__top-span">Разминка</span></button>
+                        <button class="slider__top-btn slider__top-btn--inactive">2 <span class="slider__top-span">Хайкинг</span></button>
+                        <button class="slider__top-btn slider__top-btn--inactive">3 <span class="slider__top-span">Заминка</span></button>
+                        <div class="slider__swipe-icon slider__swipe-icon--top">
+                            <img src="assets/images/swipe.png" alt="" />
+                        </div>
 
-    
-    <p>привет</p>
-</body>
+                        <div class="slider__params slider__params--top">
+                            <h3 class="slider__params-heading">Длительность:</h3>
+                            <ul>
+                                <li>~60 мин. наверх;</li>
+                                <li>~30 мин. вниз.</li>
+                            </ul>
+                            <h3 class="slider__params-complexity">Сложность: 2/5</h3>
+                        </div>
+                    </div>
+
+                    <div class="slider__top-flex-right">
+                        <div class="slider__top-text">
+                            <h2 class="slider__top-title">Разминка. Торгашинский хребет</h2>
+                            <p class="slider__top-description">
+                                Спросите сибиряка, что стоит посетить в Красноярске, и он назовёт это место. На вершине хребта можно увидеть
+                                столицу большого края с высоты птичьего полёта. Нужно только преодолеть 1683 ступени самой длинной в России
+                                лестницы, а затем ещё немного подняться по грунту. Идеально после длительного перелёта. Вдохновляюще перед
+                                полнодневным хайком.
+                            </p>
+                        </div>
+                        <div class="slider__top-images">
+                            <div class="slider__top-marker">
+                                <img src="assets/images/bg/marker-top.png" alt="" />
+                            </div>
+                            <div class="slider__top-image-group">
+                                <div class="slider__top-image slider__top-image--left">
+                                    <img src="assets/images/top/top-1.webp" alt="" />
+                                </div>
+                                <div class="slider__top-image slider__top-image--right">
+                                    <img src="assets/images/top/top-2.webp" alt="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider__params slider__params--bottom">
+                        <h3 class="slider__params-heading">Длительность:</h3>
+                        <ul>
+                            <li>~60 мин. наверх;</li>
+                            <li>~30 мин. вниз.</li>
+                        </ul>
+                        <h3 class="slider__params-complexity">Сложность: 2/5</h3>
+                    </div>
+                </div>
+
+                <div class="slider__bottom">
+
+                    <div class="slider__bottom-images">
+                        <div class="slider__bottom-marker">
+                            <img src="assets/images/bg/marker-bottom.png" alt="" />
+                        </div>
+
+                        <div class="slider__bottom-image-group">
+                            <div class="slider__bottom-image slider__bottom-image--left">
+                                <img src="assets/images/bottom/bottom-1.webp" alt="" />
+                            </div>
+                            <div class="slider__bottom-image slider__bottom-image--right">
+                                <img src="assets/images/bottom/bottom-2.webp" alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider__bottom-controls">
+                        <div class="slider__bottom-left-controls">
+                            <div class="slider__swipe-icon--bottom">
+                                <img src="assets/images/swipe.png" alt="" />
+                            </div>
+                            <button class="slider__bottom-btn">1</button>
+                            <button class="slider__bottom-btn">2</button>
+                            <button class="slider__bottom-btn">3</button>
+                        </div>
+
+                        <div class="slider__bottom-right-controls">
+                            <button class="slider__carousel-btn slider__carousel-btn--prev">
+                                <img src="assets/svgs/prev-btn.svg" alt="">
+                            </button>
+                            <button class="slider__carousel-btn slider__carousel-btn--next">
+                                <img src="assets/svgs/next-btn.svg" alt="">
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

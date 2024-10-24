@@ -2,6 +2,7 @@
 $breakpoint1: 768px;
 $breakpoint2: 1024px;
 $breakpoint3: 1440px;
+$breakpoint4: 1920px;
 
 // Sizes
 $wr-width: rem(1111px);
@@ -14,30 +15,16 @@ $screen-width: 1440px;
 // Colors
 $colors: (
     "white": (
-        "dark": #EDF4EB,
         "neutral": #fff,
     ),
 
-    "black": (
-        "dark": #000,
-        "neutral": #2B2D33,
-    ),
-
-    "green": (
-        "neutral": #48905D,
-        "light": #99C7A7,
-        "extra-light": #EDF4EB,
-    ),
-
     "gray": (
-        "dark": #828282,
-        "neutral": #9A9AB0,
-        "light": #999EAD,
-        "extra-light": #D9D9D9,
+        "neutral": #666,
+        "disabled": rgba(157, 157, 157, 0.5),
     ),
 
-    "red": (
-        "neutral": #B82F31,
-        "light": #d7474a,
+    "orange": (
+        "neutral": #EF7D00,
+        "disabled": rgba(195, 103, 2, 0.5),
     ),
 );

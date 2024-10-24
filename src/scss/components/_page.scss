@@ -1,0 +1,21 @@
+
+
+.sliders {
+    margin-top: 114px;
+
+    @include m1() {
+        margin-top: 196px;
+    }
+
+    @include m2() {
+        margin-top: 61px;
+    }
+
+    @include m3() {
+        margin-top: 348px;
+    }
+}
+
+.hidden {
+    display: none;
+}

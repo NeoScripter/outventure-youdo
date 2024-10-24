@@ -1,0 +1,23 @@
+
+.slider__params--bottom {
+
+    @include m1() {
+        display: none;
+    }
+}
+
+.slider__bottom {}
+.slider__bottom-images {}
+.slider__bottom-marker {}
+.slider__bottom-image-group {}
+.slider__bottom-image {}
+.slider__bottom-image--left {}
+.slider__bottom-image--right {}
+.slider__bottom-controls {}
+.slider__bottom-left-controls {}
+.slider__swipe-icon--bottom {}
+.slider__bottom-btn {}
+.slider__bottom-right-controls {}
+.slider__carousel-btn {}
+.slider__carousel-btn--prev {}
+.slider__carousel-btn--next {}

@@ -7,7 +7,6 @@ body {
 
 body {
     font-family: "Regular";
-    position: relative;
     min-height: 100vh;
     color: #fff;
 
@@ -21,11 +20,7 @@ body {
 .wrapper {
     margin-inline: auto;
     max-width: 1920px;
-}
-
-p {
-    margin-top: 120px;
-    font-size: 20px;
+    padding-inline: clamp(5px, 2.5vw, 25px);
 }
 
 [x-cloak] { display: none !important; }
