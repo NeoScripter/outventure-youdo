@@ -1,4 +1,4 @@
-.slider__params--bottom {
+.bottom-params {
     display: flex;
 
     & > * {
@@ -10,7 +10,7 @@
     }
 }
 
-.slider__bottom {
+.slider-bottom {
 
     @include m1() {
         display: flex;
@@ -21,7 +21,7 @@
         }
     }
 }
-.slider__bottom-images {
+.bottom-images {
     position: relative;
     aspect-ratio: 1/1;
 
@@ -29,7 +29,7 @@
         flex-basis: 65%;
     }
 }
-.slider__bottom-marker {
+.bottom-marker {
     position: absolute;
     width: 60%;
     top: -12%;
@@ -37,8 +37,12 @@
     img {
         @include image(contain);
     }
+
+    @include m2 () {
+        top: 40%;
+    }
 }
-.slider__bottom-image-group {
+.bottom-image-group {
     position: relative;
     height: 100%;
 
@@ -47,12 +51,12 @@
         margin-left: auto;
     }
 }
-.slider__bottom-image {
+.bottom-image {
     position: absolute;
     width: 80%;
     height: 100%;
 }
-.slider__bottom-image--prev {
+.prev-img {
     top: 30%;
     left: 10%;
    
@@ -95,7 +99,8 @@
         }
     }
 }
-.slider__bottom-image--current {
+.current-img,
+.next-img {
     top: 10%;
     right: 3%;
 
@@ -127,88 +132,11 @@
     }
 }
 
-
-.slider__bottom-controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 1rem;
-}
-.slider__bottom-left-controls {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-    @include m1() {
-        display: none;
-    }
-
-}
-.slider__swipe-icon--bottom {
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    background-color: color("gray", "disabled");
-
-    justify-content: center;
-
-    img {
-        width: 38px;
-        height: 38px;
-    }
-
-    @include m1() {
-        display: none;
-    }
-}
-.slider__bottom-btn {
-    background-color: color('gray');
-    aspect-ratio: 1/1;
-    border: none;
-    padding: 12px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    border-radius: 40px;
-
-    justify-content: center;
-
-    @include fs16();
-}
-.slider__bottom-right-controls {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    @include m1() {
-        margin-top: 10%;
-    }
-    @include m2() {
-        margin-top: 5%;
-    }
-}
-.slider__carousel-btn {
-    background-color: transparent;
-    border: none;
-    width: 60px;
-    height: 60px;
-    flex-shrink: 0;
-    cursor: pointer;
-
-    img {
-        @include image();
-    }
-}
-.slider__carousel-btn--prev {
-}
-.slider__carousel-btn--next {
+.next-img {
+    display: none;
 }
 
-.bottom-flex {
+.bottom-container {
 
     @include m1() {
         margin-top: 5%;
@@ -218,9 +146,6 @@
         flex-basis: 35%;
         align-self: center;
     }
-}
-
-.bottom-content {
 }
 
 .bottom-headline {
@@ -242,7 +167,8 @@
     }
 }
 
-.bottom-text {
+
+.bottom-desc {
     margin-top: 0.5em;
     margin-bottom: 2.5em;
     text-align: center;
@@ -256,5 +182,82 @@
     @include m2() {
         text-align: left;
         @include fs18(400);
+    }
+}
+
+
+.bottom-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+.bottom-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include m1() {
+        display: none;
+    }
+
+}
+.swipe-icon.bottom-swipe {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    background-color: color("gray", "disabled");
+
+    justify-content: center;
+
+    img {
+        width: 38px;
+        height: 38px;
+    }
+
+    @include m1() {
+        display: none;
+    }
+}
+.bottom-btn {
+    background-color: color('gray');
+    aspect-ratio: 1/1;
+    border: none;
+    padding: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 40px;
+
+    justify-content: center;
+
+    @include fs16();
+}
+.bottom-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include m1() {
+        margin-top: 10%;
+    }
+    @include m2() {
+        margin-top: 5%;
+    }
+}
+.carousel-btn {
+    background-color: transparent;
+    border: none;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    img {
+        @include image();
     }
 }
