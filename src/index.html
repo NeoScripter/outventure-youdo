@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="wrapper">
-            <div x-data="slider()" class="slider">
+            <div x-data="slider()" class="slider" @touchstart="startSwipe" @touchend="endSwipe">
                 <!-- Top Section -->
                 <div class="slider-top">
                     <div class="top-controls">
@@ -50,7 +50,7 @@
                 </div>
 
                 <!-- Bottom Section (Carousel) -->
-                <div class="slider-bottom" x-ref="carousel" @touchstart="startSwipe" @touchend="endSwipe">
+                <div class="slider-bottom" x-ref="carousel">
                     <div class="bottom-images">
                         <div class="bottom-marker">
                             <img src="assets/images/bg/marker-bottom.png" alt="" />
