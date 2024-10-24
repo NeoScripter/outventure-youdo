@@ -1,16 +1,16 @@
 .sliders {
-    margin-top: 244px;
+    margin-top: 120px;
 
     @include m1() {
-        margin-top: 400px;
+        margin-top: 200px;
     }
 
     @include m2() {
-        margin-top: 400px;
+        margin-top: 200px;
     }
 
     @include m3() {
-        margin-top: 400px;
+        margin-top: 200px;
     }
 }
 
