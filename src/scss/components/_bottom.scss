@@ -20,6 +20,9 @@
             flex-basis: 50%;
         }
     }
+    @include m2() {
+        margin-right: 3%;
+    }
 }
 .bottom-images {
     position: relative;

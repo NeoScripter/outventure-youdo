@@ -158,10 +158,10 @@
 }
 .top-title {
     margin-bottom: 0.3em;
-    @include fs24();
+    @include fs30();
 
     @include m3() {
-        @include fs30();
+        @include fs40();
     }
 }
 .top-desc {
@@ -171,9 +171,12 @@
         @include fs16();
     }
 
+    @include m2() {
+        @include fs18(400);
+    }
     
     @include m3() {
-        @include fs18(400);
+        @include fs20(400);
     }
 }
 .top-images {
@@ -230,7 +233,9 @@
     overflow: hidden;
     position: absolute;
     width: 60%;
+    transition: transform 0.3s ease-in-out;
     aspect-ratio: 4/5;
+    z-index: 2;
 
     
     img {
@@ -245,7 +250,10 @@
     @include m2() {
         width: 65%;
     }
+
+
 }
+
 .top-image.left-img {
     top: 10%;
     left: 5%;
@@ -275,7 +283,96 @@
 
     @include m2() {
         left:auto;
-        right: 0;
+        right: 8%;
         transform: rotate(0deg);
+    }
+}
+
+.right-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.top-image-group:has(.right-img:hover) .left-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.right-img:hover {
+    z-index: 10;
+}
+
+.right-img:hover::after {
+    content: none;
+}
+
+
+.left-img.animate {
+    animation: move-and-revert-left 900ms forwards;
+}
+
+.right-img.animate {
+    animation: move-and-revert-right 900ms forwards;
+}
+
+.top-image-group:has(.right-img:hover) .left-img {
+    animation: move-and-revert-left-hover 900ms forwards;
+}
+
+.right-img:hover {
+    animation: move-and-revert-right-hover 900ms forwards;
+}
+
+@keyframes move-and-revert-left {
+    0% {
+        transform: translate(0, 0) rotate(-8deg); 
+    }
+    50% {
+        transform: translate(-7%, 7%) rotate(-14deg); 
+    }
+    100% {
+        transform: translate(0, 0) rotate(-8deg);
+    }
+}
+
+@keyframes move-and-revert-right {
+    0% {
+        transform: translate(0, 0) rotate(0); 
+    }
+    50% {
+        transform: translate(20%, -7%) rotate(14deg); 
+    }
+    100% {
+        transform: translate(0, 0) rotate(0); 
+    }
+}
+
+@keyframes move-and-revert-left-hover {
+    0% {
+        transform: translate(0, 0) rotate(-8deg); 
+    }
+    50% {
+        transform: translate(-7%, 7%) rotate(-14deg); 
+    }
+    100% {
+        transform: translate(0, 0) rotate(-8deg);
+    }
+}
+
+@keyframes move-and-revert-right-hover {
+    0% {
+        transform: translate(0, 0) rotate(0); 
+    }
+    50% {
+        transform: translate(20%, -7%) rotate(14deg); 
+    }
+    100% {
+        transform: translate(0, 0) rotate(0); 
     }
 }

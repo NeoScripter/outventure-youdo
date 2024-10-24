@@ -77,6 +77,21 @@
     }
 }
 
+@mixin fs20($weight: bold) {
+    font-size: 20px;
+    font-style: normal;
+    line-height: 130%;
+
+    @if ($weight == bold) {
+        font-weight: 700;
+        font-family: 'Bold';
+    } @else {
+        font-weight: 400;
+        font-family: 'Regular';
+    }
+}
+
+
 @mixin fs24() {
     font-size: 24px;
     font-style: normal;
