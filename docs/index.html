@@ -1,37 +1,94 @@
-<!doctype html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Outventure</title><script defer="defer" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><script defer="defer" src="js/main.31d6cfe0d16ae931b73c.js"></script><script defer="defer" src="js/styles.31d6cfe0d16ae931b73c.js"></script><link href="css/styles.9a74a6f173d5a7408f3c.css" rel="stylesheet"></head><body><div class="wrapper"><div class="slider"><div class="slider-top"><div class="top-controls"><button class="top-btn">1 <span class="top-label">Разминка</span></button> <button class="top-btn inactive">2 <span class="top-label">Хайкинг</span></button> <button class="top-btn inactive">3 <span class="top-label">Заминка</span></button><div class="swipe-icon top-swipe"><img src="assets/images/swipe.png" alt=""/></div><div class="params top-params"><h3 class="params-title">Длительность:</h3><ul><li>~60 мин. наверх;</li><li>~30 мин. вниз.</li></ul><h3 class="params-level">Сложность: 2/5</h3></div></div><div class="top-content"><div class="top-info"><h2 class="top-title">Разминка. Торгашинский хребет</h2><p class="top-desc">Спросите сибиряка, что стоит посетить в Красноярске, и он назовёт это место. На вершине хребта можно увидеть столицу большого края с высоты птичьего полёта. Нужно только преодолеть 1683 ступени самой длинной в России лестницы, а затем ещё немного подняться по грунту. Идеально после длительного перелёта. Вдохновляюще перед полнодневным хайком.</p></div><div class="top-images"><div class="top-marker"><img src="assets/images/bg/marker-top.png" alt=""/></div><div x-data="{ animate: false }" class="top-image-group"><div class="top-image left-img" :class="{'animate': animate}"><img src="assets/images/top/top-1.webp" alt=""/></div><div class="top-image right-img" :class="{'animate': animate}" @mouseover="animate = false" @mouseleave="animate = true"><img src="assets/images/top/top-2.webp" alt=""/></div></div></div></div><div class="params bottom-params"><h3 class="params-level">Сложность: 2/5</h3><div><h3 class="params-title">Длительность:</h3><ul><li>~60 мин. наверх;</li><li>~30 мин. вниз.</li></ul></div></div></div><div x-data="carousel()" class="slider-bottom"><div class="bottom-images"><div class="bottom-marker"><img src="assets/images/bg/marker-bottom.png" alt=""/></div><div class="bottom-image-group"><template x-for="(image, index) in images" :key="index"><div class="bottom-image" :class="{
-                                        'prev-img': index < currentIndex,
-                                        'current-img': index === currentIndex,
-                                        'next-img': index > currentIndex
-                                    }"><div class="thumb small-img"><img :src="image.small" alt=""></div><div class="thumb large-img"><img :src="image.large" alt=""></div></div></template></div></div><div class="bottom-container"><div class="bottom-info"><div class="bottom-headline"><h3>Как экипироваться</h3><h3 x-text="`${currentIndex + 1} / ${images.length}`"></h3></div><div class="bottom-desc">Непродуваемая куртка с суперлегким утеплителем Zero Down и водоотталкивающей пропиткой ADD SHIELD.</div></div><div class="bottom-controls"><div class="bottom-left"><div class="swipe-icon bottom-swipe"><img src="assets/images/swipe.png" alt=""></div><button class="slide-btn slide-btn--active">1</button> <button class="slide-btn">2</button> <button class="slide-btn">3</button></div><div class="bottom-right"><button class="carousel-btn prev-btn" @click="prevImage" :disabled="currentIndex === 0"><img src="assets/svgs/prev-btn.svg" alt=""></button> <button class="carousel-btn next-btn" @click="nextImage" :disabled="currentIndex === images.length - 1"><img src="assets/svgs/next-btn.svg" alt=""></button></div></div></div></div><script>document.addEventListener('alpine:init', () => {
-                        Alpine.data('carousel', () => ({
-                            images: [
-                                {
-                                    small: 'assets/images/small/small-1.webp',
-                                    large: 'assets/images/bottom/bottom-1.webp'
-                                },
-                                {
-                                    small: 'assets/images/small/small-2.webp',
-                                    large: 'assets/images/bottom/bottom-2.webp'
-                                },
-                                {
-                                    small: 'assets/images/small/small-3.webp',
-                                    large: 'assets/images/bottom/bottom-3.webp'
-                                }
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Outventure</title><script defer="defer" src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script><script defer="defer" src="js/main.31d6cfe0d16ae931b73c.js"></script><script defer="defer" src="js/styles.31d6cfe0d16ae931b73c.js"></script><link href="css/styles.8123682c781453f5c1d1.css" rel="stylesheet"></head><body><div class="wrapper"><div x-data="slider()" class="slider"><div class="slider-top"><div class="top-controls"><template x-for="(btn, index) in topButtons" :key="index"><button class="top-btn" :class="{'inactive': currentTopIndex !== index}" @click="selectTop(index)"><span x-text="index + 1"></span> <span class="top-label" x-text="btn"></span></button></template><div class="swipe-icon top-swipe"><img src="assets/images/swipe.png" alt=""/></div></div><div class="top-content"><div class="top-info"><h2 class="top-title" x-text="titles[currentTopIndex]"></h2><p class="top-desc" x-text="descriptions[currentTopIndex]"></p></div><div class="top-images"><div class="top-marker"><img src="assets/images/bg/marker-top.png" alt=""/></div><div x-data="{ animate: false }" class="top-image-group"><div class="top-image left-img" :class="{'animate': animate}"><img :src="topImages[currentTopIndex][0]" alt=""/></div><div class="top-image right-img" :class="{'animate': animate}" @mouseenter="animate = false" @mouseleave="animate = true"><img :src="topImages[currentTopIndex][1]" alt=""/></div></div></div></div></div><div class="slider-bottom" x-ref="carousel" @touchstart="startSwipe" @touchend="endSwipe"><div class="bottom-images"><div class="bottom-marker"><img src="assets/images/bg/marker-bottom.png" alt=""/></div><div class="bottom-image-group"><template x-for="(image, index) in bottomImages[currentTopIndex]" :key="index"><div class="bottom-image" :class="{
+                                        'prev-img': index < currentBottomIndex,
+                                        'current-img': index === currentBottomIndex,
+                                        'next-img': index > currentBottomIndex
+                                    }"><div class="thumb small-img"><img :src="image.small" alt=""/></div><div class="thumb large-img"><img :src="image.large" alt=""/></div></div></template></div></div><div class="bottom-container"><div class="bottom-info"><div class="bottom-headline"><h3>Как экипироваться</h3><h3 x-text="`${currentBottomIndex + 1} / ${bottomImages[currentTopIndex].length}`"></h3></div><div class="bottom-desc" x-text="bottomDescriptions[currentTopIndex][currentBottomIndex]"></div></div><div class="bottom-controls"><div class="bottom-left"><div class="swipe-icon bottom-swipe"><img src="assets/images/swipe.png" alt=""/></div></div><div class="bottom-right"><template x-for="(btn, index) in bottomButtons" :key="index"><button class="slide-btn" :class="{'slide-btn--active': currentTopIndex === index}" @click="selectTop(index)"><span x-text="index + 1"></span></button></template></div><div class="bottom-right"><button class="carousel-btn prev-btn" @click="prevImage" :disabled="currentBottomIndex === 0"><img src="assets/svgs/prev-btn.svg" alt=""/></button> <button class="carousel-btn next-btn" @click="nextImage" :disabled="currentBottomIndex === bottomImages[currentTopIndex].length - 1"><img src="assets/svgs/next-btn.svg" alt=""/></button></div></div></div></div></div><script>document.addEventListener("alpine:init", () => {
+                    Alpine.data("slider", () => ({
+                        topButtons: ["Разминка", "Хайкинг", "Заминка"],
+                        titles: ["Разминка. Торгашинский хребет", "Хайкинг. Красноярские Столбы", "Заминка. Манская петля"],
+                        descriptions: [
+                            "Спросите сибиряка, что стоит посетить в Красноярске, и он назовёт это место. На вершине хребта можно увидеть столицу большого края с высоты птичьего полёта. Нужно только преодолеть 1683 ступени самой длинной в России лестницы, а затем ещё немного подняться по грунту. Идеально после длительного перелёта. Вдохновляюще перед полнодневным хайком.",
+                            "Увидеть Столбы — скалы причудливых форм — и замереть: такие они завораживающие. По пути мы играли в ассоциации, они так и лезут в голову. Трек хорошо промаркирован, даже залюбовавшись на чарующую зимнюю Сибирь заблудиться не получится. Впрочем, мы и не пытались — на пути нас ждали сразу в двух кордонах. Знаете, как вкусен горячий сбитень где-то глубоко в еловом лесу? Обязательно узнайте. Безупречно для выходного дня. Наполняюще для активного отпуска.",
+                            "Спросите сибиряка, что стоит посетить в Красноярске, и он назовёт это место. На вершине хребта можно увидеть столицу большого края с высоты птичьего полёта. Нужно только преодолеть 1683 ступени самой длинной в России лестницы, а затем ещё немного подняться по грунту. Идеально после длительного перелёта. Вдохновляюще перед полнодневным хайком."
+                        ],
+                        topImages: [
+                            ["assets/images/top/top-1.webp", "assets/images/top/top-2.webp"],
+                            ["assets/images/top/top-3.webp", "assets/images/top/top-4.webp"],
+                            ["assets/images/top/top-5.webp", "assets/images/top/top-6.webp"]
+                        ],
+                        bottomButtons: [1, 2, 3],
+                        bottomImages: [
+                            [
+                                { small: "assets/images/small/small-1.webp", large: "assets/images/bottom/bottom-1.webp" },
+                                { small: "assets/images/small/small-2.webp", large: "assets/images/bottom/bottom-2.webp" },
+                                { small: "assets/images/small/small-3.webp", large: "assets/images/bottom/bottom-3.webp" }
                             ],
-                            currentIndex: 0,
-                
-                            // Move to the previous image
-                            prevImage() {
-                                if (this.currentIndex > 0) {
-                                    this.currentIndex--;
-                                }
-                            },
-                
-                            // Move to the next image
-                            nextImage() {
-                                if (this.currentIndex < this.images.length - 1) {
-                                    this.currentIndex++;
-                                }
+                            [
+                                { small: "assets/images/small/small-1.webp", large: "assets/images/bottom/bottom-4.webp" },
+                                { small: "assets/images/small/small-2.webp", large: "assets/images/bottom/bottom-5.webp" },
+                                { small: "assets/images/small/small-4.webp", large: "assets/images/bottom/bottom-6.webp" }
+                            ],
+                            [
+                                { small: "assets/images/small/small-1.webp", large: "assets/images/bottom/bottom-7.webp" },
+                                { small: "assets/images/small/small-2.webp", large: "assets/images/bottom/bottom-8.webp" },
+                                { small: "assets/images/small/small-4.webp", large: "assets/images/bottom/bottom-9.webp" },
+                                { small: "assets/images/small/small-5.webp", large: "assets/images/bottom/bottom-10.webp" }
+                            ]
+                        ],
+                        bottomDescriptions: [
+                            ["Непродуваемая куртка с суперлегким утеплителем Zero Down и водоотталкивающей пропиткой ADD SHIELD.", "Брюки с тканевой подкладкой Pro-reflect, чтобы не замерзнуть.", "Шапка, перчатки"],
+                            ["Непродуваемая куртка с суперлегким утеплителем Zero Down и водоотталкивающей пропиткой ADD SHIELD.", "Брюки с тканевой подкладкой Pro-reflect, чтобы не замерзнуть.", "Ботинки Olimp LTR с глубоким рельефным протектором ADD GRIP Ice, защищенным носком ADD PROTECT и водоотталкивающей пропиткой ADD DRY."],
+                            ["Непродуваемая куртка с суперлегким утеплителем Zero Down и водоотталкивающей пропиткой ADD SHIELD.", "Брюки с тканевой подкладкой Pro-reflect, чтобы не замерзнуть.", "Ботинки Olimp LTR с глубоким рельефным протектором ADD GRIP Ice, защищенным носком ADD PROTECT и водоотталкивающей пропиткой ADD DRY.", "Сменная одежда для комфорта во время долгих приключений. "]
+                        ],
+                        currentTopIndex: 0,
+                        currentBottomIndex: 0,
+
+                        // Swipe variables
+                        startX: 0,
+                        endX: 0,
+
+                        // Select top index
+                        selectTop(index) {
+                            this.currentTopIndex = index;
+                            this.currentBottomIndex = 0;
+                        },
+
+                        // Select bottom index
+                        selectBottom(index) {
+                            this.currentBottomIndex = index;
+                        },
+
+                        // Move to the previous image
+                        prevImage() {
+                            if (this.currentBottomIndex > 0) {
+                                this.currentBottomIndex--;
                             }
-                        }));
-                    });</script></div></div></body></html>
+                        },
+
+                        // Move to the next image
+                        nextImage() {
+                            if (this.currentBottomIndex < this.bottomImages[this.currentTopIndex].length - 1) {
+                                this.currentBottomIndex++;
+                            }
+                        },
+
+                        // Handle touch start
+                        startSwipe(event) {
+                            this.startX = event.touches[0].clientX;
+                        },
+
+                        // Handle touch end
+                        endSwipe(event) {
+                            this.endX = event.changedTouches[0].clientX;
+
+                            // Determine swipe direction
+                            if (this.startX > this.endX + 50) {
+                                // Swipe left
+                                this.nextImage();
+                            } else if (this.startX < this.endX - 50) {
+                                // Swipe right
+                                this.prevImage();
+                            }
+                        }
+                    }));
+                });</script></div></body></html>

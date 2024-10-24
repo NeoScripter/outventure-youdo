@@ -311,7 +311,7 @@
 .bottom-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
     @include m1() {
         margin-top: 10%;

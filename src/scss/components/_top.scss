@@ -1,16 +1,16 @@
 .slider {
-    margin-top: 120px;
+    margin-top: 100px;
 
     @include m1() {
-        margin-top: 200px;
-    }
-
-    @include m2() {
         margin-top: 100px;
     }
 
+    @include m2() {
+        margin-top: 20px;
+    }
+
     @include m3() {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 }
 
@@ -59,6 +59,10 @@
     padding: 0.5em 1em;
     color: color("white");
     @include fs24();
+
+    @include m1() {
+        width: 210px;
+    }
 }
 
 .top-btn.inactive {
