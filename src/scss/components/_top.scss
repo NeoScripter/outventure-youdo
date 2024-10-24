@@ -233,7 +233,8 @@
     overflow: hidden;
     position: absolute;
     width: 60%;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out,
+    z-index 150ms ease-in-out;
     aspect-ratio: 4/5;
     z-index: 2;
 
